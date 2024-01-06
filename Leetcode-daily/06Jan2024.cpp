@@ -1,7 +1,7 @@
 // Author : Shubham Chaudhari
 // Date : 06/01/2024
-// Problem : Array Pair Sum Divisibility Problem
-// Difficulty : Medium
+// Problem : Maximum-profit-in-job-scheduling
+// Difficulty : Hard
 // Problem Link : https://leetcode.com/problems/maximum-profit-in-job-scheduling/?envType=daily-question&envId=2024-01-06
 // Video Solution : https://youtu.be/ACHpwyOBCAU?si=x4YTJsPpB9zKby-p
 
