@@ -3,7 +3,7 @@
 // Problem : 938. Range Sum of BST
 // Difficulty : Easy
 // Problem Link : https://leetcode.com/problems/range-sum-of-bst/description/?envType=daily-question&envId=2024-01-08
-// Video Solution : 
+// Video Solution : https://youtu.be/g9rWB4jgLgI?si=EP9TArRyLG8OLzQs
 
 // Code:
 
