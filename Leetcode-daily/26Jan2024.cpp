@@ -1,0 +1,45 @@
+// Author : Shubham Chaudhari
+// Date : 26/01/2024
+// Problem : 576. Out of Boundary Paths
+// Difficulty : Medium
+// Problem Link : https://leetcode.com/problems/out-of-boundary-paths/description/?envType=daily-question&envId=2024-01-26
+// Video Solution : https://youtu.be/kGZ7maikgsg
+// Code:
+class Solution {
+public:
+    int findPaths(int m, int n, int maxMove, int startRow, int startColumn) {
+        const int M = 1000000000 + 7;
+        vector<vector<int>> dp(m, vector<int>(n, 0));
+
+        dp[startRow][startColumn] = 1;
+        int count = 0;
+
+        for(int moves = 1; moves <= maxMove; moves++){
+
+            vector<vector<int>> temp (m, vector<int>(n, 0));
+
+            for(int i=0; i<m ; i++){
+                for(int j=0; j<n; j++){
+
+                    if(i == m-1) count = (count + dp[i][j]) % M;
+                    if(j == n-1) count = (count + dp[i][j]) % M;
+                    if(i == 0) count = (count + dp[i][j]) % M;
+                    if(j == 0) count = (count + dp[i][j]) % M;
+
+                    temp[i][j] = (
+                                    (
+                                        (i > 0 ? dp[i - 1][j] : 0) + (i < m-1 ? dp[i+1][j] : 0)
+                                    ) % M + 
+                                    (
+                                        (j > 0 ? dp[i][j - 1] : 0) + (j < n-1 ? dp[i][j+1] : 0)
+                                    ) % M
+                                ) % M; 
+                }
+            }
+
+            dp = temp;
+        }
+        return count;
+
+    }
+};
